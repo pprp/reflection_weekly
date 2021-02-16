@@ -8,6 +8,7 @@ Reinforcement Learning
    :alt: NAS-RL经典范式
 
    NAS-RL经典范式
+
 神经网络架构搜索经典范式是，首先通过controller以p概率采样一个网络结构，然后开始训练网络结构得到准确率R，根据准确率R和概率p可以使用梯度上升的方法更新controller的参数。
 
 在NAS-RL中，使用了Policy
@@ -22,6 +23,7 @@ Gradient算法来训练controller（通常实现是一个RNN或者LSTM）。训�
    :alt: 生成示意图
 
    生成示意图
+
 上图展示了一个RNN生成超参数的详细过程，每五个输出结果组成一个Layer，每个Layer中
 
 包含了一个卷积所需要的参数，主要包含：
@@ -39,6 +41,7 @@ Point进行指向：
    :alt: 添加skip connection
 
    添加skip connection
+
 1.2 用REINFORCE进行训练
 -----------------------
 
@@ -94,6 +97,7 @@ R的表达式：\ :math:`\bar{R}_{\theta}=\sum_{\tau} R(\tau) p_{\theta}(\tau)`,
    :alt: 分布式训练NAS
 
    分布式训练NAS
+
 为了加速训练过程，采用了parameter-server机制，一共有S个参数服务器，保存的是K个Controller的复制，每个复制品会采样m个不同的子结构，这样可以同时进行训练，然后每个Controller收集m个子结构得到的梯度，然后将更新结果提交到参数服务器。
 
 1.4 RNN的结构生成
@@ -105,6 +109,7 @@ RNN和LSTM都是接收\ :math:`x_t`\ 和\ :math:`h_{t-1}`\ 作为输入，得到
    :alt: RNN示意图
 
    RNN示意图
+
 对照图很容易理解，需要解释的就是Cell Inject和Cell
 Indices，首先看最后的输出0，这代表需要计算Tree Index
 0输出结果，具体计算方法是Cell
@@ -118,6 +123,7 @@ Index1的输出决定。
    :alt: CIFAR10上实验结果
 
    CIFAR10上实验结果
+   
 在训练了12800个结构以后，找到了在验证集上最优的结构。然后使用grid
 search方法搜索学习率、weight decay、batchnorm
 epsilon和衰减学习率的epoch。
