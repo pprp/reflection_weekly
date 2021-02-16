@@ -10,9 +10,7 @@ Welcome to awesome-attention-module-in-cv's documentation!
    :maxdepth: 2
    
    2021/index
-
-   
-   
+   2021/综述/pooling
    
 
 

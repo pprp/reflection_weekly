@@ -78,8 +78,6 @@ figure 测试：
 
     *are you ok*
 
-Paragraph title..
-"""""""""""""""""
 
 脚注测试：
 
