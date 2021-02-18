@@ -13,7 +13,7 @@
 
 ![](https://img-blog.csdnimg.cn/20200307221848913.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0REX1BQX0pK,size_16,color_FFFFFF,t_70)
 
-大部分pooling操作满足上图的模型，假设输入大小为$i$, 输出大小为$o$, kernel size简称$k$, stride简称$s$，满足以下公式：
+大部分pooling操作满足上图的模型，假设输入大小为 `$i$` , 输出大小为 `$o$` , kernel size简称 `$k$` , stride简称 `$s$` ，满足以下公式：
 
 $$
 o=\lfloor\frac{i-k}{s} \rfloor+1
